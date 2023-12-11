@@ -24,11 +24,14 @@ namespace prueba
             {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2},
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ,2 ,2 ,2 ,2 ,2 ,2 ,2}
         };
-
+        private int circuloX = 0;
+        private int circuloY = 0;
         public Form1()
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(this.Form1_Paint);
+            // Establecer el estado del formulario a maximizado para iniciar en pantalla completa
+            this.WindowState = FormWindowState.Maximized;
 
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -70,6 +73,25 @@ namespace prueba
                     }
 
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
+                }
+            }
+            for (int i = 0; i < filas; i++)
+            {
+                for (int j = 0; j < columnas; j++)
+                {
+                    Brush colorFondoAnterior = Brushes.White;
+                    g.FillEllipse(colorFondoAnterior, circuloX, circuloY, anchoCelda, altoCelda);
+
+                    int x = j * anchoCelda;
+                    int y = i * altoCelda;
+
+                    Brush colorCirculo = Brushes.Red;
+                    g.FillEllipse(colorCirculo, x, y, anchoCelda, altoCelda);
+
+                    Thread.Sleep(50);
+
+                    circuloX = x;
+                    circuloY = y;
                 }
             }
         }
