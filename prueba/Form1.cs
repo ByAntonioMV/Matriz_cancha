@@ -79,9 +79,6 @@ namespace prueba
             {
                 for (int j = 0; j < columnas; j++)
                 {
-                    Brush colorFondoAnterior = Brushes.White;
-                    g.FillEllipse(colorFondoAnterior, circuloX, circuloY, anchoCelda, altoCelda);
-
                     int x = j * anchoCelda;
                     int y = i * altoCelda;
 
@@ -92,6 +89,22 @@ namespace prueba
 
                     circuloX = x;
                     circuloY = y;
+
+                    if (matriz[i, j] == 1)
+                    {
+                        Brush colorFondo = Brushes.Green;
+                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
+                    }
+                    if (matriz[i, j] == 0)
+                    {
+                        Brush colorFondo = Brushes.White;
+                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
+                    }
+                    if (matriz[i, j] == 2)
+                    {
+                        Brush colorFondo = Brushes.Black;
+                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
+                    }
                 }
             }
         }
