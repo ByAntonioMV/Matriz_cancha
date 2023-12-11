@@ -24,13 +24,17 @@ namespace prueba
             {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2},
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ,2 ,2 ,2 ,2 ,2 ,2 ,2}
         };
-
+       
         public Form1()
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(this.Form1_Paint);
 
+            
+            //comentarios
+
         }
+        
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -68,7 +72,7 @@ namespace prueba
 
                         g.FillRectangle(colorFondo, x, y, anchoCelda, altoCelda);
                     }
-
+                    
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
                 }
             }
