@@ -71,7 +71,6 @@ namespace prueba
 
                         g.FillRectangle(colorFondo, x, y, anchoCelda, altoCelda);
                     }
-
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
                 }
             }
