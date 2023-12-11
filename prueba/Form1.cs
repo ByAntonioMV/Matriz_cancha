@@ -1,11 +1,16 @@
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace prueba
 {
 
     public partial class Form1 : Form
     {
+       
+
+
         public int[,] matriz = {
             {2, 2, 2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2 ,2},
             {2, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2},
@@ -24,14 +29,18 @@ namespace prueba
             {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2},
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ,2 ,2 ,2 ,2 ,2 ,2 ,2}
         };
-        private int circuloX = 0;
-        private int circuloY = 0;
+        
+        private string directorioInicio;
+        private string rutaImagen;
         public Form1()
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(this.Form1_Paint);
             // Establecer el estado del formulario a maximizado para iniciar en pantalla completa
             this.WindowState = FormWindowState.Maximized;
+
+            directorioInicio = Application.StartupPath;
+            rutaImagen = Path.Combine(directorioInicio, "imagenes/pickachu.jpeg");
 
         }//estos cambios no cuentan
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -52,6 +61,8 @@ namespace prueba
 
                     int x = j * anchoCelda;
                     int y = i * altoCelda;
+
+                    
 
                     if (matriz[i, j] == 1)
                     {
