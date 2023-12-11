@@ -75,38 +75,7 @@ namespace prueba
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
                 }
             }
-            for (int i = 0; i < filas; i++)
-            {
-                for (int j = 0; j < columnas; j++)
-                {
-                    int x = j * anchoCelda;
-                    int y = i * altoCelda;
-
-                    Brush colorCirculo = Brushes.Red;
-                    g.FillEllipse(colorCirculo, x, y, anchoCelda, altoCelda);
-
-                    Thread.Sleep(50);
-
-                    circuloX = x;
-                    circuloY = y;
-
-                    if (matriz[i, j] == 1)
-                    {
-                        Brush colorFondo = Brushes.Green;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
-                    }
-                    if (matriz[i, j] == 0)
-                    {
-                        Brush colorFondo = Brushes.White;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
-                    }
-                    if (matriz[i, j] == 2)
-                    {
-                        Brush colorFondo = Brushes.Black;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
-                    }
-                }
-            }
+            
         }
     }
 }
