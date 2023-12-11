@@ -73,37 +73,22 @@ namespace prueba
                     }
 
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
-                }
-            }
-            for (int i = 0; i < filas; i++)
-            {
-                for (int j = 0; j < columnas; j++)
-                {
-                    int x = j * anchoCelda;
-                    int y = i * altoCelda;
 
-                    Brush colorCirculo = Brushes.Red;
-                    g.FillEllipse(colorCirculo, x, y, anchoCelda, altoCelda);
-
-                    Thread.Sleep(50);
-
-                    circuloX = x;
-                    circuloY = y;
-
-                    if (matriz[i, j] == 1)
+                    // Agregar código para dibujar la imagen en la posición (0,0)
+                    if (i == 0 && j == 0)
                     {
-                        Brush colorFondo = Brushes.Green;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
-                    }
-                    if (matriz[i, j] == 0)
-                    {
-                        Brush colorFondo = Brushes.White;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
-                    }
-                    if (matriz[i, j] == 2)
-                    {
-                        Brush colorFondo = Brushes.Black;
-                        g.FillEllipse(colorFondo, circuloX, circuloY, anchoCelda, altoCelda);
+                        try
+                        {
+                            // Cargar la imagen desde el archivo Pichu.png
+                            Image pichuImage = Image.FromFile("Pichu.png");
+
+                            // Dibujar la imagen en la posición (0,0)
+                            g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                        }
                     }
                 }
             }
