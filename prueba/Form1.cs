@@ -1,3 +1,4 @@
+using System.Configuration.Internal;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -44,15 +45,17 @@ namespace prueba
             int columnas = matriz.GetLength(1);
             int anchoCelda = 50;
             int altoCelda = 50;
-
-
+            //int i = 0;
+            //int j = 0;
+            
+            
             for (int i = 0; i < filas; i++)
             {
                 for (int j = 0; j < columnas; j++)
                 {
-
                     int x = j * anchoCelda;
                     int y = i * altoCelda;
+
 
                     if (matriz[i, j] == 1)
                     {
@@ -74,29 +77,33 @@ namespace prueba
                     }
 
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
-
                     // Agregar código para dibujar la imagen en la posición (0,0)
-                    if (i == 8 && j == 2)
-                    {
-                        Image pichuImage = Image.FromFile("Pichu.png");
-                        g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
-                    }
-                    if (i == 8 && j == 5)
-                    {
-                        Image pichuImage = Image.FromFile("Pichu.png");
-                        g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
-                    }
-                    if (i == 8 && j == 8)
-                    {
-                        Image pichuImage = Image.FromFile("Pichu.png");
-                        g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
-                    }
-                    if (i == 8 && j == 11)
-                    {
-                        Image pichuImage = Image.FromFile("Pichu.png");
-                        g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
-                    }
+                    
+
                 }
+            }
+            for (int i = 0; i < filas; i++)
+            {
+                
+                for (int j = 0; j < columnas; j++)
+                {
+                    int x = j * anchoCelda;
+                    int y = i * altoCelda;
+                    int m = 2;
+                    int v = 2;
+                    if (i <= m && j== 5 && i == v)
+                    {
+
+                        Image pichuImage = Image.FromFile("Pichu.png");
+                        g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
+
+                         
+
+                    }
+                    
+                    
+                }
+                
             }
         }
     }
