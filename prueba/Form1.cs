@@ -91,7 +91,37 @@ namespace prueba
                             MessageBox.Show("Error al cargar la imagen: " + ex.Message);
                         }
                     }
-                    if (i == 8 && j == 2)
+                    if (i == 8 && j == 5)
+                    {
+                        try
+                        {
+                            // Cargar la imagen desde el archivo Pichu.png
+                            Image pichuImage = Image.FromFile("Pichu.png");
+
+                            // Dibujar la imagen en la posición (0,0)
+                            g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                        }
+                    }
+                    if (i == 8 && j == 8)
+                    {
+                        try
+                        {
+                            // Cargar la imagen desde el archivo Pichu.png
+                            Image pichuImage = Image.FromFile("Pichu.png");
+
+                            // Dibujar la imagen en la posición (0,0)
+                            g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                        }
+                    }
+                    if (i == 8 && j == 11)
                     {
                         try
                         {
