@@ -16,6 +16,7 @@ namespace prueba
             {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
             {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
             {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
+            {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
             {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
             {2, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,2},
             {2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 ,1 ,1 ,1 ,0 ,0 ,0 ,0 ,2},
@@ -75,7 +76,22 @@ namespace prueba
                     g.DrawRectangle(Pens.Black, x, y, anchoCelda, altoCelda);
 
                     // Agregar código para dibujar la imagen en la posición (0,0)
-                    if (i == 0 && j == 0)
+                    if (i == 8 && j == 2)
+                    {
+                        try
+                        {
+                            // Cargar la imagen desde el archivo Pichu.png
+                            Image pichuImage = Image.FromFile("Pichu.png");
+
+                            // Dibujar la imagen en la posición (0,0)
+                            g.DrawImage(pichuImage, x, y, anchoCelda, altoCelda);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                        }
+                    }
+                    if (i == 8 && j == 2)
                     {
                         try
                         {
